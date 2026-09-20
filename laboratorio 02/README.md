@@ -37,3 +37,21 @@ Los cuatro ejemplos se prepararon con **Unity 6000.3.15f1 (Unity 6.3 LTS)** a pa
 ## Verificación
 
 Cada proyecto compiló, entró realmente en Play Mode durante una prueba automatizada de 5 segundos con **0 errores del proyecto**, y su ejecutable de Windows se abrió y permaneció funcionando durante la prueba. Los archivos de automatización dentro de `Assets/Editor` solo configuran/verifican el proyecto y no se incluyen en el comportamiento educativo del build.
+
+## 5. Algoritmos de Movimiento en Python
+
+- **Carpeta:** `05 Algoritmos de Movimiento Python`.
+- **Ejemplos:** Seeking con Arrive, Wandering continuo y combinación Wandering/Seeking por radio de detección.
+- **Tecnología:** Python 3.12 y Pygame 2.6.1.
+- **Verificación:** 6 pruebas automáticas y 4 capturas reproducibles en `resultados`.
+- **Ejecución:** consultar el `README.md` de la carpeta para instalar dependencias y ejecutar cada ejemplo.
+
+## 6. NPC Movement en Godot
+
+- **Carpeta:** `npc-movement`.
+- **Escena principal:** `main.tscn`.
+- **Qué demuestra:** dos NPC de fútbol disputan automáticamente una pelota usando el algoritmo Seeking.
+- **Representación:** círculos azul y rojo para los personajes y un círculo amarillo más pequeño para la pelota.
+- **Comportamiento:** quien no posee la pelota la persigue, la roba al acercarse y pasa a atacar la portería contraria.
+- **Controles opcionales:** **Espacio** para pausar y **R** para reiniciar.
+- **Ejecución:** importar `npc-movement/project.godot` con Godot 4 y presionar **F5**.

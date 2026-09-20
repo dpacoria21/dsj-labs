@@ -45,3 +45,18 @@ crashlytics-build.properties
 .DS_Store
 Thumbs.db
 Desktop.ini
+
+# Python-generated files and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Godot-generated cache and imported resources
+.godot/
+.import/
+.mono/
+
+# Local verification artifacts generated during lab preparation
+/tmp/
