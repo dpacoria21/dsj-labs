@@ -1,0 +1,9 @@
+escena,segundos,distancia_minima,distancia_final,adelanto_promedio,capturas,entrada
+01_A_Seek_Manual,8.000,3.9689,7.1077,0.0000,0,direccion circular sintetica
+02_B_Pursuit_Manual,8.000,1.7627,5.5532,2.6317,0,direccion circular sintetica
+03_C_Pursuit_Evasion,8.000,0.0000,0.0000,2.5874,0,Evasion autonoma
+04_C_Reactiva,8.000,0.0000,0.0000,0.5051,0,Evasion autonoma
+05_C_Anticipada,8.000,0.0076,2.2767,4.8892,0,Evasion autonoma
+06_E1_Seek_RunnerRapido,8.000,4.3497,7.8727,0.0000,0,direccion circular sintetica
+07_E1_Pursuit_RunnerRapido,8.000,1.9879,6.0995,3.0609,0,direccion circular sintetica
+08_E2_Captura,8.000,0.0073,0.0073,0.0000,1,Runner inmovil

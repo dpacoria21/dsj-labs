@@ -1,0 +1,58 @@
+PASS Referencias 01_A_Seek_Manual
+PASS Marcadores sin collider 0
+PASS Posiciones iniciales 0
+PASS Modo Runner 0
+PASS Modo Predator 0
+PASS Velocidades 0
+PASS Referencias 02_B_Pursuit_Manual
+PASS Marcadores sin collider 1
+PASS Posiciones iniciales 1
+PASS Modo Runner 1
+PASS Modo Predator 1
+PASS Velocidades 1
+PASS Referencias 03_C_Pursuit_Evasion
+PASS Marcadores sin collider 2
+PASS Posiciones iniciales 2
+PASS Modo Runner 2
+PASS Modo Predator 2
+PASS Velocidades 2
+PASS Referencias 04_C_Reactiva
+PASS Marcadores sin collider 3
+PASS Posiciones iniciales 3
+PASS Modo Runner 3
+PASS Modo Predator 3
+PASS Velocidades 3
+PASS Referencias 05_C_Anticipada
+PASS Marcadores sin collider 4
+PASS Posiciones iniciales 4
+PASS Modo Runner 4
+PASS Modo Predator 4
+PASS Velocidades 4
+PASS Referencias 06_E1_Seek_RunnerRapido
+PASS Marcadores sin collider 5
+PASS Posiciones iniciales 5
+PASS Modo Runner 5
+PASS Modo Predator 5
+PASS Velocidades 5
+PASS Referencias 07_E1_Pursuit_RunnerRapido
+PASS Marcadores sin collider 6
+PASS Posiciones iniciales 6
+PASS Modo Runner 6
+PASS Modo Predator 6
+PASS Velocidades 6
+PASS Referencias 08_E2_Captura
+PASS Marcadores sin collider 7
+PASS Posiciones iniciales 7
+PASS Modo Runner 7
+PASS Modo Predator 7
+PASS Velocidades 7
+PASS Distancia 0.8 NO captura
+PASS Distancia mayor NO captura
+PASS Distancia menor SI captura
+PASS Diagonal respeta velocidad maxima
+PASS Cambio de velocidad respeta aceleracion
+PASS Pursuit predice con velocidad
+PASS T limitado por maxPrediction
+PASS T=0 equivale a Seek
+PASS Evasion se aleja del punto futuro
+PASS Limites arena

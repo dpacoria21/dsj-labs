@@ -1,0 +1,4 @@
+Unity 6000.3.15f1
+UTC 2026-10-03T23:42:50.1383696Z
+8 escenas x 8 segundos simulados; deltaTime=1/60.
+Errores: 0

@@ -1,0 +1,4 @@
+LAB04_CHECKS_OK count=58
+LAB04_BUILD_OK bytes=145342567
+Runner captured
+LAB04_RUNTIME_FINISHED errors=0
