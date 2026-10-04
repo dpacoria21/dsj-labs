@@ -43,3 +43,7 @@ En este recorrido Pursuit redujo la distancia mínima frente a Seek, también co
 - PNG de cada escena y variantes `_t03`: estado a 3 y 8 segundos. En C base/reactiva al final las cápsulas se superponen; usa también `_t03` para ver ambos agentes y las predicciones.
 
 Los logs completos y el ejecutable están en el equipo de preparación bajo `LAB04_PursuitEvasion/Logs` y `Builds/Windows`; no se suben a Git. Se regeneran con el script. No hay evidencias fabricadas de Console o Inspector.
+
+## Capturas posteriores del editor
+
+Se añadió [editor/](editor/README.md) con **20 capturas auténticas de la ventana de Unity**, incluyendo Scene/Game, Inspectores nativos y Console con `Runner captured`. Corresponden a una ejecución adicional automatizada para el informe; el CSV y los 17 renders anteriores conservan sus resultados originales. Cada imagen tiene su escena, selección y pie recomendado documentados.
