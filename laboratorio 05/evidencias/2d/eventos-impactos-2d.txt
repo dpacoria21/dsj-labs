@@ -1,0 +1,4 @@
+LAB05_HIT tiro=5;objetivo=A;puntos=0
+LAB05_HIT tiro=1;objetivo=A;puntos=1
+LAB05_HIT tiro=2;objetivo=A;puntos=2
+LAB05_HIT tiro=3;objetivo=B;puntos=3

@@ -1,0 +1,12 @@
+{
+  "unity": "6000.3.15f1",
+  "durationSeconds": 9.3,
+  "errors": 0,
+  "shots": 10,
+  "highArcTargetHits": 6,
+  "lowArcTargetHits": 3,
+  "reloadDisplacementMetres": 0,
+  "unreachableChaseMetres": 0.7983441,
+  "noUnreachableShots": true,
+  "passed": true
+}

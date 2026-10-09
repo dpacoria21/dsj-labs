@@ -1,0 +1,9 @@
+Unity 6000.3.15f1
+UTC 2026-10-09T18:16:58.6235658Z
+Box2D: Physics2D.Simulate(dt=0.02), cuerpos reales, entrada sintetica de arrastre.
+Capturas: render offscreen real de Camera con marcador de estado/puntos en la escena.
+No incluyen interfaz IMGUI, Inspector ni Console; no es una sesion humana de arrastre.
+Pruebas: 4 vuelos libres (0.8 s); entrada A base; A/A/B extension; duplicado mismo tiro; R; N; rebote suelo.
+Rebote medido: 0.61755
+Comprobaciones: 34
+Errores: 0

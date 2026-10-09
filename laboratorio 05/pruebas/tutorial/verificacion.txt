@@ -1,0 +1,33 @@
+VERIFICACIÓN — CALCULATING TRAJECTORIES
+Fecha: 2026-10-09, zona America/Lima
+Unity: 6000.3.15f1
+Build Windows:
+TUTORIAL_BUILD_OK bytes=89853949
+Exiting without the bug reporter. Application will terminate with return code 0
+Comprobaciones y Play Mode:
+TUTORIAL_CHECK_OK arco bajo calculable
+TUTORIAL_CHECK_OK arco alto calculable
+TUTORIAL_CHECK_OK dos raíces complementarias
+TUTORIAL_CHECK_OK blanco fuera de alcance
+{
+  "unity": "6000.3.15f1",
+  "durationSeconds": 9.3,
+  "errors": 0,
+  "shots": 10,
+  "highArcTargetHits": 6,
+  "lowArcTargetHits": 3,
+  "reloadDisplacementMetres": 0,
+  "unreachableChaseMetres": 0.7983441,
+  "noUnreachableShots": true,
+  "passed": true
+}
+Ejecutable observado:
+{
+  "executable": "Builds/Windows/Calculating Trajectories.exe",
+  "observedSeconds": 8,
+  "exitedUnexpectedly": false
+}
+Impactos registrados en la build:
+TUTORIAL_TARGET_HIT target=Objetivo - WASD
+TUTORIAL_TARGET_HIT target=Objetivo - WASD
+TUTORIAL_TARGET_HIT target=Objetivo - WASD

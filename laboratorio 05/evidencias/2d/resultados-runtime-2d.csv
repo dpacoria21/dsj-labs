@@ -1,0 +1,10 @@
+prueba,masa,gravedad_scale,segundos,error_prediccion_unidades,error_formula_continua_unidades,colisiones,puntos
+vuelo_libre,1,1,0.8,0.0000023,0.0784793,0,0
+vuelo_libre,1,0.6,0.8,0.0000029,0.0470898,0,0
+vuelo_libre,2,1,0.8,0.0000012,0.0784798,0,0
+vuelo_libre,2,0.6,0.8,0.0000012,0.0470884,0,0
+impacto_A,1,1,2.8,0,0,6,0
+impacto_A,1,1,2.8,0,0,6,1
+impacto_A,1,1,2.8,0,0,6,2
+impacto_B,1,1,2.8,0,0,4,3
+rebote_suelo,1,1,0,0,0,1,3

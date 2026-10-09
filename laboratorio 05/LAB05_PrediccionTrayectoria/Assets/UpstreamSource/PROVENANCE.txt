@@ -1,0 +1,18 @@
+Origen: https://github.com/herbou/Tuto_DrawTrajectory
+Commit: 9348e63d9d3c088568735257941fcc9d8751d309
+Descargado: 2026-10-09
+Autor y licencia: hamza herbou, 2020, MIT (LICENSE.txt).
+
+Se preservan los sprites, prefabs, materiales y metadatos originales en Assets.
+Los cuatro scripts originales se preservan sin modificar como *.cs.txt para evitar
+clases duplicadas. La escena binaria original se preserva como level1.unity.bytes.
+Para inspeccionarla, copie ese archivo a un proyecto original y cambie su extension
+a .unity. No forma parte del build del laboratorio adaptado.
+
+Assets/Scripts contiene adaptaciones Unity 6 de Ball, GameManager y Trajectory,
+y las extensiones Cup/CupSensor, puntuacion y verificacion runtime. El editor
+convierte el material bounciness a serializacion de Unity 6 con valores .5/.6.
+Las escenas reproducibles actuales se construyen desde Assets/Editor.
+El importador de box.png adapta mesh FullRect y border14px para SpriteRenderer
+Sliced; se conserva la imagen original y su valor original de 180 pixels/unidad.
+El PDF del curso se utiliza como guia y no se redistribuye en este repositorio.
