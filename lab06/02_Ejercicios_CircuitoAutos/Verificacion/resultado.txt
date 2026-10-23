@@ -1,0 +1,5 @@
+Unity 6000.3.15f1
+Simulacion: 240 segundos por escena; dt 0.02; PhysX real.
+Capturas: Camera.Render, sin interfaz IMGUI.
+Comprobaciones: 46
+Errores: 0

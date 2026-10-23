@@ -1,0 +1,4 @@
+YellowTank vueltas=14 waypoints=132
+GreenTank vueltas=10 waypoints=91
+RedTank vueltas=13 waypoints=118
+BlueTank vueltas=11 waypoints=104

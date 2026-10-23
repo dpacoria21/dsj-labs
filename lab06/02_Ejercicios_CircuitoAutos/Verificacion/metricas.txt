@@ -1,0 +1,10 @@
+01 Jade vueltas_tracker=10 esperas=0 contactos=66
+02 Azul vueltas_tracker=11 esperas=0 contactos=112
+04 Ambar vueltas_tracker=12 esperas=0 contactos=120
+03 Coral vueltas_tracker=11 esperas=0 contactos=54
+max_distancia_tracker=4.864 minY=-0.064 recuperacion=True
+GreenTank vueltas_tracker=9 esperas=0 contactos=156
+RedTank vueltas_tracker=9 esperas=0 contactos=54
+BlueTank vueltas_tracker=8 esperas=0 contactos=51
+YellowTank vueltas_tracker=9 esperas=0 contactos=159
+max_distancia_tracker=4.888 minY=-0.050 recuperacion=True
