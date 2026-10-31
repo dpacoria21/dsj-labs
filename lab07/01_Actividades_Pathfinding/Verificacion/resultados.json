@@ -1,0 +1,65 @@
+{
+    "checks": [
+        {
+            "name": "Grid 2D y fisica 2D",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Capa Environment",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Escaneo detecta paredes y suelo",
+            "passed": true,
+            "detail": "blocked=1840, walkable=3844"
+        },
+        {
+            "name": "Destino Player",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Graphics orientado por EnemyMovement",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Llegada destino 0",
+            "passed": true,
+            "detail": "distance=0.6171599"
+        },
+        {
+            "name": "Llegada destino 1",
+            "passed": true,
+            "detail": "distance=0.6365706"
+        },
+        {
+            "name": "Llegada destino 2",
+            "passed": true,
+            "detail": "distance=0.6346552"
+        },
+        {
+            "name": "Llegada destino 3",
+            "passed": true,
+            "detail": "distance=0.6212111"
+        },
+        {
+            "name": "Enemigo no atraviesa paredes",
+            "passed": true,
+            "detail": "overlaps=0, crossings=0"
+        },
+        {
+            "name": "Agente se desplaza y recalcula",
+            "passed": true,
+            "detail": "distance=50.49142, paths=15"
+        },
+        {
+            "name": "Jugador respeta pared derecha",
+            "passed": true,
+            "detail": "x=11.395"
+        }
+    ],
+    "failures": 0
+}

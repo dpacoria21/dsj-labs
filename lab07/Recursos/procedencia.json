@@ -1,0 +1,12 @@
+[
+  {
+    "archivo": "Player_original.png",
+    "url": "https://drive.google.com/uc?export=download&id=1Epzoo14fYCxe6VsyiHPyt3BMpFhn3_p-",
+    "sha256": "cf45e2a4a3f6591ffb2d09f0dd23f3be0a4518ab8419470e2c46b89bc10a1006"
+  },
+  {
+    "archivo": "AstarPathfindingProject_4.2.17.unitypackage",
+    "url": "https://arongranberg.com/astar/downloads/0/astarpathfindingproject_master_free_4_2_17_c030646a.unitypackage",
+    "sha256": "a752feea9f4a59113c9fefc2163a956ef342aaeab9935d857fa18a499cdc35f9"
+  }
+]

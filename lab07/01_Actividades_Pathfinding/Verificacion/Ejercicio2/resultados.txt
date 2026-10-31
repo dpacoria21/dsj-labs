@@ -1,0 +1,1 @@
+101 pruebas correctas: 100 pares comparados con BFS y un caso sin ruta.

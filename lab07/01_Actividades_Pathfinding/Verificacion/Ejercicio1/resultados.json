@@ -1,0 +1,140 @@
+{
+    "checks": [
+        {
+            "name": "12 paredes con collider y capa Environment",
+            "passed": true,
+            "detail": "count=12"
+        },
+        {
+            "name": "Dos agentes AIPath",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Enemy destino Player",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Enemy orientacion Graphics",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Enemy_2 destino Player",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Enemy_2 orientacion Graphics",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "wall_Bottom bloquea nodos",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "wall_Top bloquea nodos",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "wall_Left bloquea nodos",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "wall_Right bloquea nodos",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "wall_InnerLeft bloquea nodos",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "wall_InnerRight bloquea nodos",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "wall_InnerTop bloquea nodos",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "wall_InnerBottom bloquea nodos",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "wall_Extra_1 bloquea nodos",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "wall_Extra_2 bloquea nodos",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "wall_Extra_3 bloquea nodos",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "wall_Extra_4 bloquea nodos",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Enemy alcanza destino 0",
+            "passed": true,
+            "detail": "distance=0.6663938"
+        },
+        {
+            "name": "Enemy_2 alcanza destino 0",
+            "passed": true,
+            "detail": "distance=0.2817659"
+        },
+        {
+            "name": "Enemy alcanza destino 1",
+            "passed": true,
+            "detail": "distance=0.4650244"
+        },
+        {
+            "name": "Enemy_2 alcanza destino 1",
+            "passed": true,
+            "detail": "distance=0.662065"
+        },
+        {
+            "name": "Enemy alcanza destino 2",
+            "passed": true,
+            "detail": "distance=0.672859"
+        },
+        {
+            "name": "Enemy_2 alcanza destino 2",
+            "passed": true,
+            "detail": "distance=0.5790006"
+        },
+        {
+            "name": "Ambos evitan las paredes",
+            "passed": true,
+            "detail": "overlaps=0, crossings=0"
+        },
+        {
+            "name": "Enemy recorre y recalcula",
+            "passed": true,
+            "detail": "distance=41.20866, paths=11"
+        },
+        {
+            "name": "Enemy_2 recorre y recalcula",
+            "passed": true,
+            "detail": "distance=39.3565, paths=11"
+        }
+    ],
+    "failures": 0
+}
