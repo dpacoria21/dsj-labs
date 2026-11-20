@@ -1,0 +1,9 @@
+Unity 6000.3.15f1 | Direct3D11
+PASS Two flocks with 100 fish each
+PASS Terrain collider on Obstacle layer
+PASS Free camera installed
+PASS Scene references | missing scripts=0, missing meshes=0, invalid materials=0
+PASS Collective movement for six simulated seconds | fish=200, mean travel=13.08 m, farthest from spawn center=18.37 m
+PASS Fish stay above the terrain in the scene run | minimum clearance=0.31 m
+PASS Fish turns away from a direct approach to the terrain | ray hit=True, avoidance activated=True, minimum clearance=1.04 m
+PASS No runtime errors | errors=0

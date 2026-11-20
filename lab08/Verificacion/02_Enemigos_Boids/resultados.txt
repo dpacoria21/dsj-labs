@@ -1,0 +1,9 @@
+Unity 6000.3.15f1 | Direct3D11
+PASS Player and thirteen enemies are active | enemies=13
+PASS Enemy layer has a trigger for every agent
+PASS Scene references | missing scripts=0, missing meshes=0, invalid materials=0
+PASS Enemies approach and spread around the stationary player | distance 13.10 to 2.71 m, nearest pair=1.15 m
+PASS Player reaches waypoint and enemies follow after the turn | destination=(-6.00, 0.00, -4.00), player error=0.09 m, mean distance=2.66 m, nearest pair=0.84 m
+PASS Player reaches waypoint and enemies follow after the turn | destination=(-1.00, 0.00, 3.00), player error=0.08 m, mean distance=2.56 m, nearest pair=0.81 m
+PASS Camera follows the player | offset change=0.000 m
+PASS No runtime errors | errors=0
