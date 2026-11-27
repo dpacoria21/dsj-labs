@@ -1,0 +1,46 @@
+Unity 6000.4.9f1 | Direct3D11 | build target Android | Vuforia=True
+PASS ImageTarget en la escena
+PASS MultiTargetVuforia en el ImageTarget
+PASS Hijos del ImageTarget en orden | Sun, Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune, Tierra y Luna, Sistema Orbital, Cohete
+PASS Planetas en Position Y = 0.08
+PASS Empieza mostrando solo Earth | activo=Earth
+PASS Referencias de la escena | missing scripts=0, missing meshes=0, invalid materials=0
+PASS Botones Previo y Siguiente
+PASS ARCamera con VuforiaBehaviour (paso 9)
+PASS Image Target desde SolarSystem.jpg (pasos 19-20) | INSTANT SolarSystem 1.000x0.715
+PASS Licencia de Vuforia configurada (paso 16)
+PASS Include ARCore Library desactivado (paso 16)
+PASS Vuforia Engine iniciado con la licencia
+INFO El reconocimiento del marcador se prueba en el editor (Play) o en el celular | en batchmode el simulador no recibe imágenes, estado=NO_POSE
+INFO Capturas con el contenido del marcador visible | se llamó a OnTrackingFound de DefaultObserverEventHandler, igual que cuando Vuforia detecta la imagen
+PASS Siguiente avanza (Earth → Mars)
+PASS Previo retrocede (Mars → Venus)
+PASS Previo en el primero salta al último
+PASS Siguiente en el último vuelve al primero
+PASS Siempre hay un solo modelo visible | Siguiente→Mars | Previo→Earth | Previo→Venus | Previo→Mercury | Previo→Sun | Previo→Cohete | Siguiente→Sun
+PASS Saturno con anillo generado
+PASS Planeta rota sobre su eje | giro en 1 s=25.0°
+PASS Siguiente llega a Tierra y Luna
+PASS Animator: la Luna orbita la Tierra | ángulo recorrido en 1 s=90° (esperado 90°)
+PASS Animator: los planetas orbitan al Sol a distinta velocidad | en 1 s Mercurio=120° Tierra=45°
+PASS Animator: el cohete despega | altura a 1.5 s=0.075
+PASS Partículas de propulsión activas | partículas=21
+PASS Botón DSJRetro AR en la escena Solar
+PASS El botón carga la escena DSJRetroAR | escena=DSJRetroAR
+PASS DSJRetro dentro del ImageTarget
+PASS Referencias de la escena | missing scripts=0, missing meshes=0, invalid materials=0
+PASS DSJRetro usa el mismo marcador SolarSystem.jpg | INSTANT SolarSystem 1.000x0.715
+PASS Cancha y jugadores de DSJRetro | cancha=Cancha 850x360, jugadores=4
+PASS Uniformes P1 y CPU
+PASS Botones Arriba, Centro y Abajo llaman a PenalesAR.Patear
+PASS Animación de reposo (cuadros 0-3) | cuadro 0 → 3
+PASS Animación de patada (cuadros 48 y 49-51) | preparar=48, patear=51
+PASS El balón vuela hacia el arco | x=0.373, y=0.031
+PASS Gol: el balón entra por el lado elegido | goles=1, balón respecto al arco=(0.012, 0.014, 0.022)
+PASS No se puede patear dos veces a la vez
+PASS Después del tiro el balón vuelve al punto penal
+PASS Atajada cuando el arquero adivina | atajadas=1, marcador='P1  1 - 1  CPU'
+PASS Marcador P1 - CPU | 'P1  2 - 1  CPU'
+PASS Reiniciar pone el marcador en 0 - 0
+PASS Botón Sistema Solar vuelve a SolarAR | escena=SolarAR
+PASS No runtime errors | errors=0

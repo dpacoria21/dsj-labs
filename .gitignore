@@ -60,3 +60,10 @@ venv/
 
 # Local verification artifacts generated during lab preparation
 /tmp/
+
+# Vuforia (lab09): el paquete pesa 138 MB (límite de GitHub: 100 MB) y la licencia es personal
+lab09/Solar/Packages/com.ptc.vuforia.engine-*.tgz
+lab09/Solar/vuforia-license.txt
+lab09/Solar/Assets/Resources/VuforiaConfiguration.asset
+lab09/Solar/Assets/Resources/VuforiaConfiguration.asset.meta
+lab09/Solar/QCAR/

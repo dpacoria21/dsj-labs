@@ -1,0 +1,125 @@
+SOLUCIÓN DE ACTIVIDADES
+Se desarrolló la aplicación Solar en Unity 6000.4.9f1 con Vuforia Engine 11.4.4. La aplicación reconoce la imagen SolarSystem.jpg como marcador y muestra sobre ella un planeta del sistema solar. Los botones Previo y Siguiente cambian el planeta visible. El proyecto se encuentra en la carpeta lab09/Solar del repositorio.
+§ Creando el proyecto en Unity
+Paso 1. Se verificaron los módulos instalados en Unity Hub. La versión 6000.4.9f1 cuenta con Android Build Support, OpenJDK y Android SDK & NDK Tools, necesarios para compilar la aplicación para Android.
+[[IMG p01_hub_installs]]
+Figura 1. Versiones de Unity instaladas. Unity 6.4 (6000.4.9f1) incluye el módulo de Android.
+[[IMG p01_modulos_android]]
+Figura 2. Módulos de Unity 6.4. Android Build Support, OpenJDK y Android SDK & NDK Tools figuran como instalados.
+Paso 2. Se creó el proyecto 3D Solar dentro de la carpeta lab09. Se empleó el pipeline de render integrado, ya que los materiales del paquete SolarSystem usan el shader Legacy Diffuse y así no fue necesario convertirlos.
+[[IMG p02_hub_proyecto]]
+Figura 3. Proyecto Solar en Unity Hub, con la plataforma Android y el editor 6000.4.9f1.
+Paso 3. Se eliminó la Main Camera de la escena, porque su función la cumple la ARCamera de Vuforia. En la jerarquía final solo quedan la luz direccional, la ARCamera, el ImageTarget, el Canvas y el EventSystem.
+[[IMG p03_jerarquia]]
+Figura 4. Jerarquía de la escena SolarAR sin la Main Camera.
+§ Cambiar de plataforma a Android en Unity
+Paso 1. Se abrió la ventana File > Build Profiles.
+[[IMG pp1_menu_file]]
+Figura 5. Opción Build Profiles del menú File.
+Paso 2. Se seleccionó Android y se pulsó Switch Platform. Android aparece como plataforma activa.
+[[IMG pp2_build_profiles]]
+Figura 6. Build Profiles con Android como plataforma activa y la escena SolarAR en la lista de escenas.
+Paso 3. En Player Settings > Other Settings > Graphics API se desactivó Auto Graphics API y se eliminó Vulkan. Solo queda OpenGLES3.
+[[IMG pp3_graphics_api]]
+Figura 7. Graphics API con OpenGLES3 como única opción.
+Paso 4. En Minimum API Level se seleccionó Android 10.0 (API level 29). La guía indica Android 6.0 (API 23), pero Unity 6.4 no admite niveles inferiores a 25 y Vuforia 11.4 detiene la compilación si el nivel es menor que 29. También se configuró IL2CPP con ARM64, como exigen Vuforia y Google Play.
+[[IMG pp4_min_api]]
+Figura 8. Minimum API Level en Android 10.0 (API level 29) y Scripting Backend IL2CPP.
+Paso 5. Se cerraron las ventanas de configuración.
+§ Obtención del SDK de Vuforia
+Paso 6. Se inició sesión en el portal de desarrolladores de Vuforia y se descargó el paquete add-vuforia-package-11-4-4.unitypackage desde la sección de descargas del SDK.
+[Captura pendiente: página de descargas del SDK de Vuforia]
+Paso 7. Se importó el paquete de Vuforia en el proyecto. Este paquete contiene el archivo com.ptc.vuforia.engine-11.4.4.tgz, que se registró en Packages/manifest.json.
+Paso 8. Al terminar la importación, Vuforia Engine AR 11.4.4 aparece en el Package Manager.
+[[IMG p07_package_manager]]
+Figura 9. Vuforia Engine AR 11.4.4 instalado desde el archivo del paquete.
+§ Agregar Vuforia a la Escena
+Paso 9. En la ventana Hierarchy se hizo clic secundario y se eligió Vuforia Engine > AR Camera.
+[[IMG p09_menu_arcamera]]
+Figura 10. Menú Vuforia Engine con la opción AR Camera.
+§ Configuración de Vuforia
+Paso 10. En el portal de Vuforia se abrió el menú Plan & Licenses.
+Paso 11. Se pulsó Generate Basic License.
+Paso 12. Se asignó un nombre a la licencia, se aceptaron los términos y se pulsó Confirm.
+Paso 13. Se seleccionó la licencia creada.
+Paso 14. Se copió la License Key.
+[Captura pendiente: licencia básica creada en Plan & Licenses]
+§ Configuración de la Cámara en Unity
+Paso 15. Se seleccionó la ARCamera. Contiene los componentes Camera, Vuforia Behaviour y Default Initialization Error Handler. Se pulsó el botón Open Vuforia Engine configuration.
+[[IMG p15_arcamera]]
+Figura 11. Inspector de la ARCamera con el botón Open Vuforia Engine configuration.
+Paso 16. Se pegó la clave en App License Key y se desactivó Include ARCore Library. En la captura se difuminó la mayor parte de la clave. El modo de Play se configuró como SIMULATOR para probar la escena en el editor sin una cámara web.
+[[IMG p16_vuforia_config]]
+Figura 12. Vuforia Configuration con la versión 11.4.4 y la clave de licencia (difuminada).
+[[IMG p16_arcore_simulador]]
+Figura 13. Include ARCore Library desactivado y PlayMode Type en SIMULATOR.
+§ Importe el paquete de ejemplo
+Paso 18. Se importó SolarSystem.unitypackage con Assets > Import Package > Custom Package. El paquete agrega las carpetas ImageTargets, Materials, Prefabs, Scripts y Textures.
+[[IMG p18_solar_system]]
+Figura 14. Carpeta Solar System importada en el proyecto.
+§ Agrega ImageTarget de Vuforia
+Paso 19. En la ventana Hierarchy se hizo clic secundario y se eligió Vuforia Engine > Image Target.
+[[IMG p19_menu_imagetarget]]
+Figura 15. Menú Vuforia Engine con la opción Image Target.
+Paso 20. Se arrastró la imagen SolarSystem de la carpeta ImageTargets al campo Image del componente Image Target Behaviour. El tipo quedó en From Image y el target se llama SolarSystem. Vuforia ajustó la textura para que se pueda leer y calculó su tamaño: 1 × 0,715 unidades.
+[[IMG p20_imagetargets_carpeta]]
+Figura 16. Imágenes de la carpeta ImageTargets. Se usó SolarSystem.
+[[IMG p20_imagetarget]]
+Figura 17. ImageTarget con la imagen SolarSystem en la escena y en el Inspector.
+§ Agregar los Prefabs a la Escena
+Paso 21. Se arrastraron los nueve prefabs del sistema solar dentro del ImageTarget, en orden: Sun, Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus y Neptune. No fue necesario usar el Render Pipeline Converter, porque el proyecto usa el pipeline integrado.
+[[IMG p21_prefabs]]
+Figura 18. Prefabs del paquete SolarSystem.
+Paso 22. Se seleccionaron todos los prefabs, de Sun a Neptune con Shift. Se cambió Position Y a 0.08 y se desactivó la visibilidad de los objetos.
+[[IMG p22_posicion_y]]
+Figura 19. Selección múltiple de los nueve planetas con Position Y en 0.08.
+§ Crear la Interfaz de interacción
+Paso 23. Se agregó un botón desde UI (Canvas) > Legacy > Button. Unity creó también el Canvas y el EventSystem.
+[[IMG p23_menu_boton]]
+Figura 20. Creación del botón desde el menú UI (Canvas) > Legacy.
+Paso 24. El botón se renombró como ButtonPrevio y su punto de anclaje se cambió a Bottom Center.
+Paso 25. Se cambió el tamaño del botón a 300 × 100 y se ubicó en la posición X = −170, Y = 90.
+[[IMG p24_previo_rect]]
+Figura 21. Rect Transform de ButtonPrevio, anclado abajo al centro, con un tamaño de 300 × 100.
+Paso 26. En el texto del botón se escribió Previo y el tamaño de fuente se cambió a 25.
+[[IMG p26_texto_previo]]
+Figura 22. Componente Text de ButtonPrevio con el texto Previo y Font Size 25.
+Paso 27. Se duplicó el botón con Ctrl + D. La copia se renombró como ButtonSiguiente, con el texto Siguiente y la posición X = 170.
+[[IMG p27_siguiente_rect]]
+Figura 23. Rect Transform de ButtonSiguiente.
+[[IMG p23_botones_game]]
+Figura 24. Botones Previo y Siguiente en la vista Game, en la parte inferior de la pantalla.
+§ Creación del Script
+Paso 28. En Assets se creó la carpeta Scripts.
+Paso 29. Dentro de Scripts se creó el script en C#. La guía lo nombra MultiTargetsVuforia, pero la clase se llama MultiTargetVuforia. Unity exige que el archivo y la clase tengan el mismo nombre, por lo que el archivo se llamó MultiTargetVuforia.cs.
+[[IMG p29_scripts]]
+Figura 25. Carpeta Scripts con MultiTargetVuforia.
+Paso 30. Se abrió el archivo en el editor de código.
+Paso 31. Se escribió el código de la guía. En Start, el script cuenta los hijos del ImageTarget y guarda la posición del modelo inicial. ChangeARModel recibe −1 o 1: oculta el modelo actual, calcula el índice del siguiente y muestra ese modelo. Si el índice queda fuera de rango, pasa al otro extremo de la lista.
+[[IMG p31_codigo]]
+Figura 26. Código de MultiTargetVuforia.
+Paso 32. Se guardó el archivo y se volvió a Unity.
+Paso 33. Se agregó el script MultiTargetVuforia al ImageTarget.
+Paso 34. Se arrastró el prefab Earth al campo Start Model para que la aplicación empiece mostrando la Tierra.
+Paso 35. Se activó el prefab Earth para que sea visible.
+[[IMG p33_multitarget_script]]
+Figura 27. ImageTarget con el componente Multi Target Vuforia y Earth como Start Model.
+§ Agregar el método ChangeARModel al evento Click de los botones
+Paso 36. En ButtonPrevio, dentro de On Click, se pulsó + y se arrastró el ImageTarget al campo de objeto.
+Paso 37. Se eligió la función MultiTargetVuforia.ChangeARModel con el valor −1.
+[[IMG p37_onclick_previo]]
+Figura 28. On Click de ButtonPrevio: ChangeARModel con el valor −1.
+Paso 38. En ButtonSiguiente se repitió el procedimiento con el valor 1.
+[[IMG p38_onclick_siguiente]]
+Figura 29. On Click de ButtonSiguiente: ChangeARModel con el valor 1.
+Paso 39. Se ejecutó la aplicación en el editor. Vuforia se inició con la licencia y el botón Siguiente cambió el modelo de la Tierra a Marte. El nombre del modelo activo aparece en la parte superior. Vuforia oculta los planetas mientras no reconoce el marcador, por lo que el reconocimiento se comprobó en el celular.
+[[IMG p39_play_mode]]
+Figura 30. Play Mode con Vuforia iniciado. Al pulsar Siguiente, el modelo activo pasa a ser Marte.
+§ Generar el Apk
+Paso 40. Desde File > Build Profiles se pulsó Build.
+[[IMG p40_build_boton]]
+Figura 31. Botones Build y Build And Run de Build Profiles.
+Paso 41. Se eligió la carpeta Builds. Unity generó el archivo Solar.apk, de 58 MB, que incluye la biblioteca de Vuforia para ARM64. El APK se instaló en un celular con Android 10 o superior y se apuntó la cámara a la imagen SolarSystem.
+[[IMG p41_apk]]
+Figura 32. Archivo Solar.apk generado en la carpeta Builds.
+[Captura pendiente: aplicación en el celular mostrando un planeta sobre el marcador]
