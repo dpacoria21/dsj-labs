@@ -6,21 +6,28 @@ Se crearon tres assets animados en la carpeta Assets/Animados. Cada uno es un pr
 • Cohete: despega del marcador, se balancea en el aire y aterriza en 4 s. Un Particle System dibuja el fuego de los propulsores.
 Los tres prefabs se agregaron como hijos del ImageTarget, después de Neptune. Así, Previo y Siguiente los muestran con el mismo script MultiTargetVuforia, sin cambiar su código. La verificación automática midió que en 1 s la Luna recorre 90°, Mercurio 120° y la Tierra 45°, y que el cohete sube 0,075 unidades en 1,5 s.
 [[IMG e1_animados]]
-Figura 33. Assets animados en la app: Tierra y Luna, Sistema Orbital y Cohete.
+Figura 34. Assets animados en el editor: Tierra y Luna, Sistema Orbital y Cohete.
+[[IMG cel_animados]]
+Figura 35. Los mismos assets en el celular, sobre el marcador: Sistema Orbital, Cohete y Tierra y Luna.
 § Ejercicio 2. Desarrolle e integre la realidad aumentada vinculada a su proyecto
 El proyecto del curso es DSJRetro, un juego de fútbol arcade 2 contra 2 hecho en Godot 4.7. Vuforia funciona con Unity, por lo que se agregó al proyecto Solar una escena nueva, DSJRetroAR, que usa los recursos del juego: la cancha, los jugadores de P1 y de la CPU, el balón, los indicadores 1P y CPU, y el cartel GOAL!. En Godot la cancha se colorea con modulate y los uniformes con un shader de paleta. El script Herramientas/exportar_sprites_dsjretro.py aplica esos mismos colores y guarda las imágenes en Assets/DSJRetro/Sprites.
 La escena usa el mismo marcador SolarSystem.jpg, así que basta con imprimir una sola imagen. Todo el juego es hijo del ImageTarget y solo aparece cuando Vuforia reconoce el marcador. Los jugadores son quads que giran hacia la cámara del celular (script MiraCamara). Se animan con los cuadros de soccer-player.png, con los mismos índices que usa DSJRetro: reposo 0–3, carrera 6–11, preparar el tiro 48 y patada 49–51 (script SpriteHoja).
 Sobre el marcador se juega una tanda de penales (script PenalesAR). Los botones Arriba, Centro y Abajo indican hacia dónde patea P1; son las mismas direcciones con las que se apunta en el juego. El arquero de la CPU elige un lado al azar. Si adivina, ataja; si no, el balón entra y aparece el cartel GOAL!. El marcador muestra los goles de P1 y las atajadas de la CPU, y el botón Reiniciar lo vuelve a 0 - 0. El botón DSJRetro AR de la escena Solar abre esta escena y el botón Sistema Solar regresa. Las dos escenas están en Build Profiles, por lo que van en el mismo APK.
 [[IMG e2_editor]]
-Figura 34. Escena DSJRetroAR en el editor: la cancha sobre el marcador y el componente Penales AR.
+Figura 36. Escena DSJRetroAR en el editor: la cancha sobre el marcador y el componente Penales AR.
 [[IMG e2_inicio]]
-Figura 35. Inicio de la tanda de penales sobre el marcador.
+Figura 37. Inicio de la tanda de penales sobre el marcador.
 [[IMG e2_tiro]]
-Figura 36. P1 patea hacia arriba y el arquero de la CPU se lanza hacia abajo.
+Figura 38. P1 patea hacia arriba y el arquero de la CPU se lanza hacia abajo.
 [[IMG e2_gol_atajada]]
-Figura 37. A la izquierda, gol con el cartel GOAL! de DSJRetro. A la derecha, atajada de la CPU.
-Las figuras 35 a 37 son capturas de la verificación automática en Play Mode. En el editor, el simulador de Vuforia no reconoce el marcador, así que el contenido se mostró llamando al mismo método que ejecuta Vuforia cuando lo reconoce. La verificación pasó las 43 pruebas, entre ellas el cambio de escena, las animaciones de patada y de reposo, el gol, la atajada, el marcador y el botón Reiniciar.
-[Captura pendiente: DSJRetro AR en el celular, sobre el marcador]
+Figura 39. A la izquierda, gol con el cartel GOAL! de DSJRetro. A la derecha, atajada de la CPU.
+Las figuras 37 a 39 son capturas de la verificación automática en Play Mode. En el editor, el simulador de Vuforia no reconoce el marcador, así que el contenido se mostró llamando al mismo método que ejecuta Vuforia cuando lo reconoce. La verificación pasó las 43 pruebas, entre ellas el cambio de escena, las animaciones de patada y de reposo, el gol, la atajada, el marcador y el botón Reiniciar.
+[[IMG cel_dsjretro]]
+Figura 40. DSJRetro AR en el celular: la cancha y los jugadores sobre el marcador SolarSystem mostrado en el monitor.
+La forma en que se ven los elementos depende del ángulo de la cámara. La cancha está acostada sobre el marcador, así que se deforma con la perspectiva. Los jugadores son sprites planos que solo giran sobre el eje vertical: si la cámara mira el marcador muy inclinada o casi desde arriba, se ven aplastados, como en la figura 41. Con la cámara de frente y algo elevada, como en la figura 40, se ven completos.
+[[IMG cel_dsjretro_angulo]]
+Figura 41. Con la cámara muy inclinada, los jugadores se ven aplastados y la cancha deformada por la perspectiva.
+En el caso de DSJRetro, la realidad aumentada no es necesaria: el juego está pensado para jugarse en una pantalla con teclado y no usa el entorno real. Esta escena es solo un prototipo de cómo se vería el juego sobre un marcador o una mesa.
 § Ejercicio 3. Haga su informe y súbalo al aula virtual
 Este documento es el informe del laboratorio. El proyecto de Unity, los scripts y los resultados de la verificación están en la carpeta lab09 del repositorio.
 @@ CUESTIONARIO
@@ -35,9 +42,10 @@ Al diseñar el juego hay que considerar varios aspectos: controles táctiles que
 Vuforia permite anclar contenido 3D sobre una imagen impresa con solo una ARCamera y un ImageTarget. El contenido se coloca como hijo del target y Vuforia lo muestra u oculta según reconozca la imagen.
 Con el script MultiTargetVuforia, un solo marcador muestra varios modelos: los botones activan un hijo del ImageTarget a la vez y la lista da la vuelta en los extremos.
 Animator, Animation Clips y Particle System funcionan igual dentro de un ImageTarget, así que se pueden agregar assets animados al carrusel sin cambiar el script.
-Los recursos 2D de DSJRetro, hecho en Godot, se pudieron reutilizar en Unity para crear un modo de realidad aumentada del juego, conservando sus colores, animaciones e indicadores.
+Los recursos 2D de DSJRetro, hecho en Godot, se pudieron reutilizar en Unity para crear un prototipo de realidad aumentada del juego, con sus colores, animaciones e indicadores. DSJRetro no necesita realidad aumentada, pero el prototipo muestra cómo se vería sobre un marcador.
 Las versiones actuales cambian algunos pasos de la guía: Vuforia 11.4 exige Android 10 (API 29) e IL2CPP con ARM64, y el script debe llamarse igual que su clase (MultiTargetVuforia.cs).
-El reconocimiento del marcador se debe probar en el celular. En el editor, el simulador de Vuforia no lo detectó, por lo que la lógica se verificó con pruebas automáticas.
+El reconocimiento del marcador se debe probar en el celular. En el editor, el simulador de Vuforia no lo detectó, por lo que la lógica se verificó con pruebas automáticas y el reconocimiento se probó en un Samsung Galaxy A15.
+El ángulo de la cámara cambia cómo se ve el contenido: la cancha se deforma con la perspectiva y los sprites planos de los jugadores se ven aplastados si la cámara mira el marcador muy inclinada.
 @@ REFERENCIAS
 Azuma, R. T. (1997). A survey of augmented reality. Presence: Teleoperators and Virtual Environments, 6(4), 355–385.
 Bize, N. (2025). Soccer Course [Código fuente]. GitHub. https://github.com/nicolasbize/soccer-course

@@ -119,7 +119,8 @@ Figura 30. Play Mode con Vuforia iniciado. Al pulsar Siguiente, el modelo activo
 Paso 40. Desde File > Build Profiles se pulsó Build.
 [[IMG p40_build_boton]]
 Figura 31. Botones Build y Build And Run de Build Profiles.
-Paso 41. Se eligió la carpeta Builds. Unity generó el archivo Solar.apk, de 58 MB, que incluye la biblioteca de Vuforia para ARM64. El APK se instaló en un celular con Android 10 o superior y se apuntó la cámara a la imagen SolarSystem.
+Paso 41. Se eligió la carpeta Builds. Unity generó el archivo Solar.apk, de 58 MB, que incluye la biblioteca de Vuforia para ARM64. El APK se instaló en un Samsung Galaxy A15 con Android 16 y se apuntó la cámara a la imagen SolarSystem, mostrada en el monitor. Al reconocerla, la aplicación muestra el modelo activo sobre la imagen.
 [[IMG p41_apk]]
 Figura 32. Archivo Solar.apk generado en la carpeta Builds.
-[Captura pendiente: aplicación en el celular mostrando un planeta sobre el marcador]
+[[IMG cel_tierra]]
+Figura 33. Aplicación Solar en el celular: la Tierra sobre el marcador SolarSystem.

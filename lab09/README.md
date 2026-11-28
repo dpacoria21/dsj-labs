@@ -50,6 +50,8 @@ python lab09\Solar\Herramientas\exportar_sprites_dsjretro.py ..\djs-retro-arcade
 
 Las dos escenas están en Build Profiles, así que el APK incluye ambas.
 
+DSJRetro no necesita realidad aumentada: esta escena es un prototipo de cómo se vería el juego sobre un marcador. Como los jugadores son sprites planos que solo giran sobre el eje vertical, se ven aplastados si la cámara mira el marcador muy inclinada.
+
 ## Reconstrucción y verificación
 
 El menú **Lab09** del editor repite los pasos de la guía:
@@ -80,7 +82,7 @@ La verificación comprueba lo siguiente:
 
 Los resultados están en [resultados.txt](Verificacion/resultados.txt).
 
-En batchmode el simulador de Vuforia no detecta el marcador (`NO_POSE`), así que el **reconocimiento se prueba en el celular**. Vuforia oculta el contenido mientras no detecta la imagen; para las capturas de [Verificacion](Verificacion), la verificación llama a `OnTrackingFound` de `DefaultObserverEventHandler`, el mismo método que usa Vuforia al detectarla.
+En batchmode el simulador de Vuforia no detecta el marcador (`NO_POSE`), así que el **reconocimiento se prueba en el celular**: se comprobó en un Samsung Galaxy A15 con Android 16 ([capturas](Informe/capturas)). El emulador de Android Studio no sirve: la imagen es x86_64 y Vuforia, que solo trae bibliotecas ARM, se congela al iniciar. Vuforia oculta el contenido mientras no detecta la imagen; para las capturas de [Verificacion](Verificacion), la verificación llama a `OnTrackingFound` de `DefaultObserverEventHandler`, el mismo método que usa Vuforia al detectarla.
 
 [`VuforiaDriverPreload`](Solar/Assets/Editor/VuforiaDriverPreload.cs) precarga `UnityDriver.dll` al abrir el proyecto. Vuforia abre esa DLL por nombre y su carpeta no está en la ruta de búsqueda; sin la precarga, el Play Mode falla con `DRIVER_CONFIG_LOAD_ERROR`.
 
