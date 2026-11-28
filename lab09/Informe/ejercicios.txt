@@ -1,0 +1,54 @@
+@@ EJERCICIOS
+§ Ejercicio 1. Pruebe otros assets animados en la App
+Se crearon tres assets animados en la carpeta Assets/Animados. Cada uno es un prefab con un componente Animator, su Animator Controller y un clip de animación en bucle:
+• Tierra y Luna: la Luna gira alrededor de la Tierra en una órbita algo inclinada y da una vuelta cada 4 s.
+• Sistema Orbital: Mercurio, Venus, la Tierra y Marte giran alrededor del Sol en 3, 5, 8 y 12 s. El clip dura 24 s, que es el mínimo común múltiplo de esos tiempos, para que todas las órbitas cierren al repetirse.
+• Cohete: despega del marcador, se balancea en el aire y aterriza en 4 s. Un Particle System dibuja el fuego de los propulsores.
+Los tres prefabs se agregaron como hijos del ImageTarget, después de Neptune. Así, Previo y Siguiente los muestran con el mismo script MultiTargetVuforia, sin cambiar su código. La verificación automática midió que en 1 s la Luna recorre 90°, Mercurio 120° y la Tierra 45°, y que el cohete sube 0,075 unidades en 1,5 s.
+[[IMG e1_animados]]
+Figura 34. Assets animados en el editor: Tierra y Luna, Sistema Orbital y Cohete.
+[[IMG cel_animados]]
+Figura 35. Los mismos assets en el celular, sobre el marcador: Sistema Orbital, Cohete y Tierra y Luna.
+§ Ejercicio 2. Desarrolle e integre la realidad aumentada vinculada a su proyecto
+El proyecto del curso es DSJRetro, un juego de fútbol arcade 2 contra 2 hecho en Godot 4.7. Vuforia funciona con Unity, por lo que se agregó al proyecto Solar una escena nueva, DSJRetroAR, que usa los recursos del juego: la cancha, los jugadores de P1 y de la CPU, el balón, los indicadores 1P y CPU, y el cartel GOAL!. En Godot la cancha se colorea con modulate y los uniformes con un shader de paleta. El script Herramientas/exportar_sprites_dsjretro.py aplica esos mismos colores y guarda las imágenes en Assets/DSJRetro/Sprites.
+La escena usa el mismo marcador SolarSystem.jpg, así que basta con imprimir una sola imagen. Todo el juego es hijo del ImageTarget y solo aparece cuando Vuforia reconoce el marcador. Los jugadores son quads que giran hacia la cámara del celular (script MiraCamara). Se animan con los cuadros de soccer-player.png, con los mismos índices que usa DSJRetro: reposo 0–3, carrera 6–11, preparar el tiro 48 y patada 49–51 (script SpriteHoja).
+Sobre el marcador se juega una tanda de penales (script PenalesAR). Los botones Arriba, Centro y Abajo indican hacia dónde patea P1; son las mismas direcciones con las que se apunta en el juego. El arquero de la CPU elige un lado al azar. Si adivina, ataja; si no, el balón entra y aparece el cartel GOAL!. El marcador muestra los goles de P1 y las atajadas de la CPU, y el botón Reiniciar lo vuelve a 0 - 0. El botón DSJRetro AR de la escena Solar abre esta escena y el botón Sistema Solar regresa. Las dos escenas están en Build Profiles, por lo que van en el mismo APK.
+[[IMG e2_editor]]
+Figura 36. Escena DSJRetroAR en el editor: la cancha sobre el marcador y el componente Penales AR.
+[[IMG e2_inicio]]
+Figura 37. Inicio de la tanda de penales sobre el marcador.
+[[IMG e2_tiro]]
+Figura 38. P1 patea hacia arriba y el arquero de la CPU se lanza hacia abajo.
+[[IMG e2_gol_atajada]]
+Figura 39. A la izquierda, gol con el cartel GOAL! de DSJRetro. A la derecha, atajada de la CPU.
+Las figuras 37 a 39 son capturas de la verificación automática en Play Mode. En el editor, el simulador de Vuforia no reconoce el marcador, así que el contenido se mostró llamando al mismo método que ejecuta Vuforia cuando lo reconoce. La verificación pasó las 43 pruebas, entre ellas el cambio de escena, las animaciones de patada y de reposo, el gol, la atajada, el marcador y el botón Reiniciar.
+[[IMG cel_dsjretro]]
+Figura 40. DSJRetro AR en el celular: la cancha y los jugadores sobre el marcador SolarSystem mostrado en el monitor.
+La forma en que se ven los elementos depende del ángulo de la cámara. La cancha está acostada sobre el marcador, así que se deforma con la perspectiva. Los jugadores son sprites planos que solo giran sobre el eje vertical: si la cámara mira el marcador muy inclinada o casi desde arriba, se ven aplastados, como en la figura 41. Con la cámara de frente y algo elevada, como en la figura 40, se ven completos.
+[[IMG cel_dsjretro_angulo]]
+Figura 41. Con la cámara muy inclinada, los jugadores se ven aplastados y la cancha deformada por la perspectiva.
+En el caso de DSJRetro, la realidad aumentada no es necesaria: el juego está pensado para jugarse en una pantalla con teclado y no usa el entorno real. Esta escena es solo un prototipo de cómo se vería el juego sobre un marcador o una mesa.
+§ Ejercicio 3. Haga su informe y súbalo al aula virtual
+Este documento es el informe del laboratorio. El proyecto de Unity, los scripts y los resultados de la verificación están en la carpeta lab09 del repositorio.
+@@ CUESTIONARIO
+1. ¿Qué es realidad aumentada?
+La realidad aumentada (RA) muestra contenido digital, como modelos 3D, texto o sonido, sobre el mundo real y en tiempo real. El usuario lo ve a través de la cámara de un celular o una tablet, o con unas gafas. Según Azuma (1997), un sistema de RA tiene tres características: combina lo real con lo virtual, es interactivo en tiempo real y ubica los objetos virtuales en el espacio 3D. A diferencia de la realidad virtual, no reemplaza el entorno, sino que lo complementa.
+Para que el contenido parezca fijo en el mundo real, el sistema calcula en cada cuadro la posición y orientación de la cámara. Puede hacerlo con un marcador, como la imagen SolarSystem de este laboratorio, con la detección de superficies y puntos del entorno (SLAM) o con la ubicación GPS del dispositivo.
+2. ¿Cómo se puede integrar la realidad aumentada a las apps de videojuegos?
+Se usa un SDK de RA dentro del motor de juego, por ejemplo Vuforia, o ARCore y ARKit a través de AR Foundation en Unity. El SDK reemplaza la cámara del juego por la cámara del dispositivo y calcula su posición. El juego coloca su escena sobre un marcador, una superficie o un lugar, y la lógica del juego sigue funcionando igual.
+Hay varias formas de usarla: un tablero o una cancha sobre un marcador o una mesa (como DSJRetro AR), juegos basados en la ubicación del jugador (como Pokémon GO), cartas o figuras coleccionables que funcionan como marcadores, y personajes que aparecen en la habitación del jugador.
+Al diseñar el juego hay que considerar varios aspectos: controles táctiles que no tapen la vista, la escala del contenido respecto al marcador o la mesa, qué hacer cuando se pierde el seguimiento (por ejemplo, pausar), el consumo de batería y el rendimiento del celular, y el permiso para usar la cámara.
+@@ CONCLUSIONES
+Vuforia permite anclar contenido 3D sobre una imagen impresa con solo una ARCamera y un ImageTarget. El contenido se coloca como hijo del target y Vuforia lo muestra u oculta según reconozca la imagen.
+Con el script MultiTargetVuforia, un solo marcador muestra varios modelos: los botones activan un hijo del ImageTarget a la vez y la lista da la vuelta en los extremos.
+Animator, Animation Clips y Particle System funcionan igual dentro de un ImageTarget, así que se pueden agregar assets animados al carrusel sin cambiar el script.
+Los recursos 2D de DSJRetro, hecho en Godot, se pudieron reutilizar en Unity para crear un prototipo de realidad aumentada del juego, con sus colores, animaciones e indicadores. DSJRetro no necesita realidad aumentada, pero el prototipo muestra cómo se vería sobre un marcador.
+Las versiones actuales cambian algunos pasos de la guía: Vuforia 11.4 exige Android 10 (API 29) e IL2CPP con ARM64, y el script debe llamarse igual que su clase (MultiTargetVuforia.cs).
+El reconocimiento del marcador se debe probar en el celular. En el editor, el simulador de Vuforia no lo detectó, por lo que la lógica se verificó con pruebas automáticas y el reconocimiento se probó en un Samsung Galaxy A15.
+El ángulo de la cámara cambia cómo se ve el contenido: la cancha se deforma con la perspectiva y los sprites planos de los jugadores se ven aplastados si la cámara mira el marcador muy inclinada.
+@@ REFERENCIAS
+Azuma, R. T. (1997). A survey of augmented reality. Presence: Teleoperators and Virtual Environments, 6(4), 355–385.
+Bize, N. (2025). Soccer Course [Código fuente]. GitHub. https://github.com/nicolasbize/soccer-course
+PTC. (s.f.). Vuforia Engine developer library. https://developer.vuforia.com/library/
+Wijesooriya, I. (2023). Mastering Augmented Reality Development with Unity: Create immersive and engaging AR experiences with Unity. BPB Publications.
+Video de referencia de la guía: https://www.youtube.com/watch?v=IjNUBcEDwk0
